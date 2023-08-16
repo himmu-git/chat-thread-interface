@@ -1,0 +1,106 @@
+.mainContainer {
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 282px auto 282px;
+  grid-gap: 24px;
+  background: var(--primaryBg);
+  min-height: 100vh;
+  color: var(--textPrimaryColor);
+  padding: 32px;
+}
+
+.mainContainer aside {
+  /* background : #fef3d3; */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 12px;
+  padding: 8px;
+}
+
+.mainContainer section,
+section {
+  /* background : #fef3d3; */
+  /* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); */
+}
+.userCardWithLastMessage {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  background: #fff;
+  border: 1px solid var(--textPrimaryColor);
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.profileImageInUserCard {
+  background: #fff;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+.chatContainer {
+  width: 100%;
+}
+.inputBoxAndSend {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  max-width: 764px;
+}
+
+.textAreaInput {
+  width: 100%;
+  /* height: 42px; */
+  padding: 12px;
+  font-size: 16px;
+  resize: none;
+}
+
+.sendButton {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  top: calc(50% - 12px);
+}
+.sendButton img {
+  width: 24px;
+  height: 24px;
+}
+.listOfMsgBox {
+  position: relative;
+}
+.listOfMsgBox {
+  display: grid;
+  gap: 12px;
+}
+.message {
+  position: relative;
+  display: flex;
+  width: 70%;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  background: #fff;
+  border: 1px solid var(--textPrimaryColor);
+  justify-content: space-between;
+  cursor: pointer;
+}
+.msgSent {
+  display: flex;
+  justify-content: end;
+}
+.timeStatusBox {
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+  display: flex;
+  gap: 2px;
+  font-size: 10px;
+  align-items: end;
+}

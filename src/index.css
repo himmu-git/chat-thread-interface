@@ -1,0 +1,10 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Arial";
+}
+:root {
+  --primaryBg: #f4f4f4;
+  --textPrimaryColor: #2f1238;
+}
