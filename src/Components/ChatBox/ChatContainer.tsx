@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import ThreadContainer from "./ThreadContainer";
 import TextFeildInput from "../Common/TextFeildInput";
 import ListOfMessages from "../Common/ListOfMessages";
@@ -37,8 +37,8 @@ const ChatContainer = (props: Props) => {
         <ThreadContainer
           messageDataThread={messageDataThread}
           onSendInThread={(msg) => {
-            setMessageDataThread((prev) => {
-              prev.replies.push(msg);
+            setMessageDataThread((prev: any) => {
+              prev?.replies?.push(msg);
               return { ...prev };
             });
           }}

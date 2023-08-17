@@ -1,11 +1,9 @@
-import React from "react";
-
 type Props = {
   isSent?: boolean;
   message: any;
-  onReplyClick: any;
+  onReplyClick?: any;
   isThreadMessage: boolean;
-  onReplyButtonClick: any;
+  onReplyButtonClick?: any;
 };
 
 const Message = (props: Props) => {

@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import sendIcon from "../../assets/sendButtonIcon.svg";
 import { MSG_TYPE } from "../Layout/ContainerLayout";
 import { v4 as uuidv4 } from "uuid";
 
 type Props = {
   onSendClick: any;
-  isReply: any;
+  isReply?: any;
 };
 
 const genrateSendMessageObj = (value, isReply) => {

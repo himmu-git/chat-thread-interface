@@ -22,6 +22,7 @@ const ListOfUser = (props: Props) => {
             onClick={() => {
               setUserSelected?.(userData?.userId);
             }}
+            userId={0}
           />
         );
       })}

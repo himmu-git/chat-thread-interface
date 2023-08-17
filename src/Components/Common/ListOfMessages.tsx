@@ -3,8 +3,8 @@ import Message from "./Message";
 
 type Props = {
   messages: any;
-  isThread: boolean;
-  setMessageDataThread: React.SetStateAction<any>;
+  isThread?: boolean;
+  setMessageDataThread?: React.SetStateAction<any>;
 };
 
 const ListOfMessages = (props: Props) => {
@@ -16,7 +16,7 @@ const ListOfMessages = (props: Props) => {
           <Message
             key={message.msgId}
             message={message}
-            isTheadMessage={isThread}
+            isThreadMessage={isThread}
             onReplyClick={() => {
               setMessageDataThread(message);
             }}

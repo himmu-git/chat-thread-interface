@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "../css/ContainerLayout.css";
 import ListOfUser from "../ChatBox/ListOfUser";
 import ChatContainer from "../ChatBox/ChatContainer";
-import ThreadContainer from "../ChatBox/ThreadContainer";
 
-type Props = {};
 export enum MSG_TYPE {
   SENT = "sent",
   SEEN = "seen",
@@ -102,7 +100,7 @@ const messageCorrespondingUser = {
   4: {},
 };
 
-const ContainerLayout = (props) => {
+const ContainerLayout = () => {
   const [userSelected, setUserSelected] = useState(1);
   return (
     <main className="mainContainer">

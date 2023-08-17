@@ -1,4 +1,3 @@
-import React from "react";
 import ListOfMessages from "../Common/ListOfMessages";
 import TextFeildInput from "../Common/TextFeildInput";
 import Message from "../Common/Message";
