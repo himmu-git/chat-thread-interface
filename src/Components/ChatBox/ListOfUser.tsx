@@ -5,6 +5,7 @@ import UserCardWithLastMessageCard, {
 
 type Props = {
   userDetailMsgDetails: UserCardWithLastMessageCardType[];
+  setUserSelected: React.SetStateAction<any>;
 };
 
 const ListOfUser = (props: Props) => {

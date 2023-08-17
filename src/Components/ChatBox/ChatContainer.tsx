@@ -9,24 +9,40 @@ type Props = {
 
 const ChatContainer = (props: Props) => {
   const { messageCorrespondingUser } = props;
+  const [messageCorrespondingUserData, setMessageCorrespondingUserData] =
+    useState(messageCorrespondingUser);
   const [messageDataThread, setMessageDataThread] = useState({});
   useEffect(() => {
     setMessageDataThread({});
+    setMessageCorrespondingUserData(messageCorrespondingUser);
   }, [messageCorrespondingUser]);
-  console.log(messageDataThread, "Set");
   return (
     <>
       <section className="chatContainer">
         <ListOfMessages
-          messages={messageCorrespondingUser.messages}
+          messages={messageCorrespondingUserData.messages}
           setMessageDataThread={setMessageDataThread}
         />
-        <TextFeildInput onSendClick={(value) => {
-          
-        }} />
+        <TextFeildInput
+          onSendClick={(msg) => {
+            setMessageCorrespondingUserData((prev) => {
+              prev.messages.push(msg);
+              return { ...prev };
+            });
+            // messageCorrespondingUser.message.push(msg);
+          }}
+        />
       </section>
       {Object.keys(messageDataThread).length > 0 && (
-        <ThreadContainer messageDataThread={messageDataThread} />
+        <ThreadContainer
+          messageDataThread={messageDataThread}
+          onSendInThread={(msg) => {
+            setMessageDataThread((prev) => {
+              prev.replies.push(msg);
+              return { ...prev };
+            });
+          }}
+        />
       )}
     </>
   );

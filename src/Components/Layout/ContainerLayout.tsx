@@ -93,11 +93,16 @@ const messageCorrespondingUser = {
       },
     ],
   },
-  3: {},
+  3: {
+    name: "Tanay",
+    lastMsg: "Hello there!",
+    lastMsgSentDate: new Date(),
+    messages: [],
+  },
   4: {},
 };
 
-const ContainerLayout = (props: Props) => {
+const ContainerLayout = (props) => {
   const [userSelected, setUserSelected] = useState(1);
   return (
     <main className="mainContainer">

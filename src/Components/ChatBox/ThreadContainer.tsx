@@ -3,10 +3,13 @@ import ListOfMessages from "../Common/ListOfMessages";
 import TextFeildInput from "../Common/TextFeildInput";
 import Message from "../Common/Message";
 
-type Props = {};
+type Props = {
+  messageDataThread: any;
+  onSendInThread: any;
+};
 
 const ThreadContainer = (props: Props) => {
-  const { messageDataThread = {} } = props;
+  const { messageDataThread = {}, onSendInThread } = props;
   return (
     <section>
       {Object.keys(messageDataThread).length > 0 && (
@@ -16,7 +19,12 @@ const ThreadContainer = (props: Props) => {
         messages={messageDataThread?.replies ?? []}
         isThread={true}
       />
-      <TextFeildInput />
+      <TextFeildInput
+        onSendClick={(msg) => {
+          onSendInThread(msg);
+        }}
+        isReply={true}
+      />
     </section>
   );
 };
