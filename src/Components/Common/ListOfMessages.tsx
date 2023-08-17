@@ -4,12 +4,21 @@ import Message from "./Message";
 type Props = {};
 
 const ListOfMessages = (props: Props) => {
+  const { messages = [], setMessageDataThread, isThread = false } = props;
   return (
     <div className="listOfMsgBox">
-      <Message />
-      <Message isSent={true} />
-      <Message />
-      <Message />
+      {messages.map((message) => {
+        return (
+          <Message
+            key={message.msgId}
+            message={message}
+            isTheadMessage={isThread}
+            onReplyClick={() => {
+              setMessageDataThread(message);
+            }}
+          />
+        );
+      })}
     </div>
   );
 };

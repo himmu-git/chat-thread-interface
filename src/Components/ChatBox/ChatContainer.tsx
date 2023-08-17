@@ -1,18 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ThreadContainer from "./ThreadContainer";
 import TextFeildInput from "../Common/TextFeildInput";
 import ListOfMessages from "../Common/ListOfMessages";
 
-type Props = {};
+type Props = {
+  messageCorrespondingUser: any;
+};
 
 const ChatContainer = (props: Props) => {
+  const { messageCorrespondingUser } = props;
+  const [messageDataThread, setMessageDataThread] = useState({});
+  useEffect(() => {
+    setMessageDataThread({});
+  }, [messageCorrespondingUser]);
+  console.log(messageDataThread, "Set");
   return (
     <>
       <section className="chatContainer">
-        <ListOfMessages />
-        <TextFeildInput />
+        <ListOfMessages
+          messages={messageCorrespondingUser.messages}
+          setMessageDataThread={setMessageDataThread}
+        />
+        <TextFeildInput onSendClick={(value) => {
+          
+        }} />
       </section>
-      <ThreadContainer />
+      {Object.keys(messageDataThread).length > 0 && (
+        <ThreadContainer messageDataThread={messageDataThread} />
+      )}
     </>
   );
 };

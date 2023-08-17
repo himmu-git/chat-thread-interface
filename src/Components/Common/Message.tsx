@@ -5,17 +5,36 @@ type Props = {
 };
 
 const Message = (props: Props) => {
-  const { isSent = false } = props;
+  const { message = {}, onReplyClick, isThreadMessage = false } = props;
+  const { replies } = message ?? {};
+  console.log(
+    replies?.length > 0,
+    isThreadMessage,
+    message?.msgTxt,
+    replies?.length > 0 && !isThreadMessage
+  );
+  if (!message) return null;
   return (
-    <div className={isSent ? "msgSent" : ""}>
-      <div className="message">
-        <span>This is Test Message</span>
-        <div className="timeStatusBox">
-          <span>12:00AM</span>
-          <span className="status">sent</span>
+    <div>
+      <div
+        className={`${message?.isSent ? "msgSent" : "msgBox"} ${
+          replies?.length > 0 && !isThreadMessage ? "showReplies" : ""
+        }`}
+      >
+        <div className="message">
+          <span>{message?.msgTxt}</span>
+          <div className="timeStatusBox">
+            <span>{message?.msgTime?.toDateString()}</span>
+            <span className="status">{message?.msgStatus}</span>
+          </div>
         </div>
+        {replies?.length > 0 && !isThreadMessage && (
+          <div className="replies" onClick={onReplyClick}>
+            {replies.length} reply
+          </div>
+        )}
+        <div className="moreOption"></div>
       </div>
-      <div className="moreOption"></div>
     </div>
   );
 };
