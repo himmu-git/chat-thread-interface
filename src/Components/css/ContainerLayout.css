@@ -42,12 +42,15 @@ section {
 }
 .chatContainer {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .inputBoxAndSend {
-  position: fixed;
-  bottom: 0px;
+  position: relative;
+  /* bottom: 0px; */
   width: 100%;
-  max-width: 764px;
+  /* max-width: 764px; */
 }
 
 .textAreaInput {
@@ -56,6 +59,7 @@ section {
   padding: 12px;
   font-size: 16px;
   resize: none;
+  border-radius: 12px;
 }
 
 .sendButton {
@@ -77,6 +81,9 @@ section {
 .listOfMsgBox {
   display: grid;
   gap: 12px;
+  overflow-y: scroll;
+  max-height: 100vh;
+  padding: 24px 0;
 }
 .message {
   position: relative;
@@ -90,6 +97,8 @@ section {
   border: 1px solid var(--textPrimaryColor);
   justify-content: space-between;
   cursor: pointer;
+  font-size: 14px;
+  line-height: 20px;
 }
 .msgSent {
   display: flex;
@@ -97,10 +106,11 @@ section {
 }
 .timeStatusBox {
   position: absolute;
-  bottom: 8px;
-  right: 10px;
+  bottom: 0px;
+  right: 6px;
   display: flex;
   gap: 2px;
-  font-size: 10px;
+  font-size: 8px;
+  line-height: 10px;
   align-items: end;
 }

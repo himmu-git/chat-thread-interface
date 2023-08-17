@@ -7,7 +7,7 @@ type Props = {
 const Message = (props: Props) => {
   const { isSent = false } = props;
   return (
-    <div className={isSent ? "msgSent" : "ßßß"}>
+    <div className={isSent ? "msgSent" : ""}>
       <div className="message">
         <span>This is Test Message</span>
         <div className="timeStatusBox">

@@ -6,7 +6,6 @@ type Props = {};
 const ListOfMessages = (props: Props) => {
   return (
     <div className="listOfMsgBox">
-      ListOfMessages
       <Message />
       <Message isSent={true} />
       <Message />
