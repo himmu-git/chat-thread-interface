@@ -34,20 +34,20 @@ const TextFeildInput = (props: Props) => {
       className="inputBoxAndSend"
       onKeyDown={(e) => {
         if (e.key == "Enter") {
-          if (msgValue) sendMsg(msgValue);
+          if (msgValue) sendMsg(msgValue.trim());
         }
       }}
     >
       <textarea
         onChange={(e) => {
-          if (e.target.value.trim()) setMsgValue(e.target.value?.trim());
+          if (e.target.value) setMsgValue(e.target.value);
         }}
         value={msgValue}
         className="textAreaInput"
       ></textarea>
       <button
         onClick={() => {
-          if (msgValue) sendMsg(msgValue);
+          if (msgValue) sendMsg(msgValue.trim());
         }}
         className="sendButton"
       >
