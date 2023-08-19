@@ -31,12 +31,12 @@ const userDetailMsgDetails = [
 const messageCorrespondingUser = {
   1: {
     name: "Himanshu",
-    lastMsg: "Hi! How are you ?",
+    lastMsg: "Hi! How are you ? There",
     lastMsgSentDate: new Date(),
     messages: [
       {
         msgId: 11,
-        msgTxt: "Hi ",
+        msgTxt: "Hi 2",
         msgStatus: MSG_TYPE.SEEN,
         msgTime: new Date(),
         isSent: true,
@@ -67,7 +67,7 @@ const messageCorrespondingUser = {
     messages: [
       {
         msgId: 21,
-        msgTxt: "Hello",
+        msgTxt: "Hello there",
         msgStatus: MSG_TYPE.SEEN,
         msgTime: new Date(),
         isSent: true,
@@ -107,6 +107,7 @@ const ContainerLayout = () => {
       <ListOfUser
         setUserSelected={setUserSelected}
         userDetailMsgDetails={userDetailMsgDetails}
+        messageCorrespondingUser={messageCorrespondingUser}
       />
       <ChatContainer
         // userSelected={userSelected}
